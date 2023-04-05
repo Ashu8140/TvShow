@@ -11,6 +11,7 @@ function App() {
           <Route path="show/:showId" element={<ShowDetailPage />} />
         </Routes>
       </BrowserRouter>
+      
     </div>
   );
 }

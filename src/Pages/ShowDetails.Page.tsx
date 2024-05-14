@@ -18,7 +18,7 @@ type ShowDetailPageProps =
  ReduxProps & ownProps;
 
 
-const ShowDetailPage: FC<ShowDetailPageProps> = ({cast, show,loadShow,params }) => {
+const ShowDetailPage: FC<ShowDetailPageProps> = ({cast, show,loadShow, params }) => {
   console.log(cast);
   useEffect(()=>{
     loadShow(+params.showId);

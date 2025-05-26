@@ -3,11 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import CastCart from "../Components/CastCart";
 import GenrePill from "../Components/GenrePill";
 import withRouter, { WithRouterProps } from "../hocs/withRouter";
-import { HiArrowSmLeft } from "react-icons/hi";
 import { State } from "../store";
 import { connect, ConnectedProps } from "react-redux";
-import { Show } from "../models/show";
-import { searchShow } from "../api";
 import {  castMapSelector, showLoadingSelector, showMapSelector } from "../Selector/shows";
 import {  loadShowAction } from "../Action/shows";
 import LoadingSpinner from "../Components/LoadingSpinner";
@@ -25,12 +22,12 @@ const ShowDetailPage: FC<ShowDetailPageProps> = ({cast, show,loadShow, params })
       },[params.showId]);
 
   if(!show){
-      return <LoadingSpinner/>;
+      return <>Loading....</>;
 }
   return (
     <div className="mt-2">
       
-     <Link className="flex items-center text-xl" to="/"><HiArrowSmLeft/>Back</Link>
+     <Link className="flex items-center text-xl" to="/">Back</Link>
       <h2 className="text-4xl font-semibold tracking-wide">{show.name}</h2>
       <div className="flex space-x-3 my-2 bg-gray-300 p-2 rounded-sm">
       {show.genres.map(Genere=><GenrePill name={Genere} key={Genere}/>)}
